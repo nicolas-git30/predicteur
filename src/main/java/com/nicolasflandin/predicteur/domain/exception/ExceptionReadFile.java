@@ -1,4 +1,4 @@
-package com.nicolasflandin.predicteur.infrastructure.exception;
+package com.nicolasflandin.predicteur.domain.exception;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationInfrastructure;
 

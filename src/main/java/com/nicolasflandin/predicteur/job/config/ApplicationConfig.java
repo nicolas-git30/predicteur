@@ -1,7 +1,7 @@
 package com.nicolasflandin.predicteur.job.config;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
-import com.nicolasflandin.predicteur.application.dto.TirageDto;
+import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import com.nicolasflandin.predicteur.job.config.properties.BatchProperties;
 import com.nicolasflandin.predicteur.job.utils.ItemSkipPolicy;
 import org.springframework.batch.core.Job;

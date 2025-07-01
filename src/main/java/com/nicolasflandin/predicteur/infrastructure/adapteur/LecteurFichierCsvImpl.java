@@ -2,7 +2,7 @@ package com.nicolasflandin.predicteur.infrastructure.adapteur;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationInfrastructure;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
-import com.nicolasflandin.predicteur.infrastructure.exception.ExceptionReadFile;
+import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.springframework.stereotype.Repository;

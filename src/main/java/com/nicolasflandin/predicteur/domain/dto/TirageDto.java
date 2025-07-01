@@ -1,8 +1,6 @@
-package com.nicolasflandin.predicteur.application.dto;
+package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
-import com.nicolasflandin.predicteur.domain.dto.EtoileDto;
-import com.nicolasflandin.predicteur.domain.dto.NumeroDto;
 
 import java.io.Serializable;
 import java.time.LocalDate;

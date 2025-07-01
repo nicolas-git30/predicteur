@@ -1,12 +1,12 @@
 package com.nicolasflandin.predicteur.application.adapteur;
 
-import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-import com.nicolasflandin.predicteur.application.dto.TirageDto;
+import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
 import com.nicolasflandin.predicteur.domain.dto.EtoileDto;
 import com.nicolasflandin.predicteur.domain.dto.NumeroDto;
-import com.nicolasflandin.predicteur.domain.port.in.IUseCaseCreationPerimetre;
+import com.nicolasflandin.predicteur.domain.dto.TirageDto;
+import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
+import com.nicolasflandin.predicteur.domain.port.out.ICreationPerimetre;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
-import com.nicolasflandin.predicteur.infrastructure.exception.ExceptionReadFile;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
@@ -15,12 +15,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-@AnnotationDomain
-public class UseCaseCreationPerimetre implements IUseCaseCreationPerimetre {
+@AnnotationApplication
+public class CreationPerimetreAdapteur implements ICreationPerimetre {
 
+
+    //Lyes Faut-il faire un brige pour cette injection ?
     private final ILecteurFichierCsv<CSVParser> lecteurCsv;
 
-    public UseCaseCreationPerimetre(final ILecteurFichierCsv<CSVParser> lecteurCsv) {
+    public CreationPerimetreAdapteur(final ILecteurFichierCsv<CSVParser> lecteurCsv) {
         this.lecteurCsv = lecteurCsv;
     }
 
