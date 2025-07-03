@@ -1,8 +1,6 @@
 package com.nicolasflandin.predicteur.application.adapteur;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
-import com.nicolasflandin.predicteur.domain.dto.EtoileDto;
-import com.nicolasflandin.predicteur.domain.dto.NumeroDto;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import com.nicolasflandin.predicteur.domain.port.out.ICreationPerimetre;
@@ -47,22 +45,14 @@ public class CreationPerimetreAdapteur implements ICreationPerimetre {
             Integer numeroDuTirage = Integer.parseInt(csvRecord.get(0));
             tirageDto.setNumeroDuTirage(numeroDuTirage);
 
-            List<NumeroDto> numeroTirage = new ArrayList<>();
+            List<Integer> numeroTirage = new ArrayList<>();
             for (int i = 2; i < 7; i++) {
-                NumeroDto numeroDto = new NumeroDto();
-                numeroDto.setNumero(Integer.parseInt(csvRecord.get(i)));
-                numeroDto.setNombreSorties(0);
-                numeroTirage.add(numeroDto);
+                numeroTirage.add(Integer.parseInt(csvRecord.get(i)));
             }
-            tirageDto.setNumeroTirage(numeroTirage);
 
-            List<EtoileDto> etoileTirage = new ArrayList<>();
+            List<Integer> etoileTirage = new ArrayList<>();
             for (int i = 7; i < csvRecord.size(); i++) {
-                EtoileDto etoileDto = new EtoileDto();
-                etoileDto.setNumeroEtoile(Integer.parseInt(csvRecord.get(i)));
-                etoileDto.setNombreSorties(0);
-                etoileDto.setDateSortie(LocalDate.now());
-                etoileTirage.add(etoileDto);
+                etoileTirage.add(Integer.parseInt(csvRecord.get(i)));
             }
             tirageDto.setEtoileTirage(etoileTirage);
 

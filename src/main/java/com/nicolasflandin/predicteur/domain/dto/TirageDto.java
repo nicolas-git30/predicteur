@@ -12,8 +12,8 @@ public class TirageDto implements Serializable {
 
     private LocalDate dateTirage;
     private Integer numeroDuTirage;
-    private List<EtoileDto> etoileTirage = new ArrayList<>();
-    private List<NumeroDto> numeroTirage = new ArrayList<>();
+    private List<Integer> etoileTirage = new ArrayList<>();
+    private List<Integer> numeroTirage = new ArrayList<>();
 
     public LocalDate getDateTirage() {
         return dateTirage;
@@ -31,19 +31,19 @@ public class TirageDto implements Serializable {
         this.numeroDuTirage = numeroDuTirage;
     }
 
-    public List<EtoileDto> getEtoileTirage() {
+    public List<Integer> getEtoileTirage() {
         return etoileTirage;
     }
 
-    public void setEtoileTirage(final List<EtoileDto> etoileTirage) {
+    public void setEtoileTirage(final List<Integer> etoileTirage) {
         this.etoileTirage = etoileTirage;
     }
 
-    public List<NumeroDto> getNumeroTirage() {
+    public List<Integer> getNumeroTirage() {
         return numeroTirage;
     }
 
-    public void setNumeroTirage(final List<NumeroDto> numeroTirage) {
+    public void setNumeroTirage(final List<Integer> numeroTirage) {
         this.numeroTirage = numeroTirage;
     }
 }
