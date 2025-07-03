@@ -7,6 +7,7 @@ import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import com.nicolasflandin.predicteur.domain.port.out.ICreationPerimetre;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
+import com.nicolasflandin.predicteur.domain.provider.IDateFormaterProvider;
 import com.nicolasflandin.predicteur.job.config.properties.FichierSource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -39,8 +40,8 @@ public class CreationPerimetreAdapteur implements ICreationPerimetre {
         for (CSVRecord csvRecord : lecteurCsv.lectureFichier(fichierSource.getPath())) {
             TirageDto tirageDto = new TirageDto();
 
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate dateTirage = LocalDate.parse(csvRecord.get(1), formatter);
+            LocalDate dateTirage = LocalDate.parse(csvRecord.get(1), DateTimeFormatter.ofPattern(
+                    IDateFormaterProvider.FORMAT_DATE_FR));
             tirageDto.setDateTirage(dateTirage);
 
             Integer numeroDuTirage = Integer.parseInt(csvRecord.get(0));
