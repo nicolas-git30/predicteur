@@ -7,3 +7,8 @@ logging:
 batch-properties:
   chunkSize: 500
   nameJob: predictionJob
+
+fichier-source:
+  delimiter: ;
+  path: src/resources/sources/tirages.csv
+

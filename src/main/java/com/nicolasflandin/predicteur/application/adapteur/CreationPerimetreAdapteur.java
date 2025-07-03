@@ -7,8 +7,11 @@ import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import com.nicolasflandin.predicteur.domain.port.out.ICreationPerimetre;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
+import com.nicolasflandin.predicteur.job.config.properties.FichierSource;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,20 +19,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 @AnnotationApplication
+@Service
 public class CreationPerimetreAdapteur implements ICreationPerimetre {
 
 
     //Lyes Faut-il faire un brige pour cette injection ?
     private final ILecteurFichierCsv<CSVParser> lecteurCsv;
+    private final FichierSource fichierSource;
 
-    public CreationPerimetreAdapteur(final ILecteurFichierCsv<CSVParser> lecteurCsv) {
+    @Autowired
+    public CreationPerimetreAdapteur(final ILecteurFichierCsv<CSVParser> lecteurCsv, final FichierSource fichierSource) {
         this.lecteurCsv = lecteurCsv;
+        this.fichierSource = fichierSource;
     }
 
     @Override
     public List<TirageDto> CreationListTirage() throws ExceptionReadFile {
         List<TirageDto> tirages = new ArrayList<>();
-        for (CSVRecord csvRecord : lecteurCsv.lectureFichier("path")) {
+        for (CSVRecord csvRecord : lecteurCsv.lectureFichier(fichierSource.getPath())) {
             TirageDto tirageDto = new TirageDto();
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
