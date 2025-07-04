@@ -21,6 +21,13 @@ public class DataJobScope implements Serializable {
     public DataJobScope() {
         NumerosAnalyse = new HashMap<>();
         EtoilesAnalyse = new HashMap<>();
+
+        for (int i = 1; i < 12; i++) {
+            this.EtoilesAnalyse.put(i, new EtoileAnalyse(i));
+        }
+        for (int i = 1; i < 50; i++) {
+            this.NumerosAnalyse.put(i, new NumeroAnalyse(i));
+        }
     }
 
     public Map<Integer, NumeroAnalyse> getNumerosAnalyse() {

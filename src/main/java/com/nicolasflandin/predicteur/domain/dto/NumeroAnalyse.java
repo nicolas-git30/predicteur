@@ -21,7 +21,8 @@ public class NumeroAnalyse implements Serializable {
     private BigDecimal moyenneSortiesTroisAns;
     private BigDecimal probabilite;
 
-    public NumeroAnalyse() {
+    public NumeroAnalyse() {}
+    public NumeroAnalyse( final Integer numero ) {
         this.numeroCombinaison = new HashMap<>();
         this.etoileCombinaison = new HashMap<>();
         for (int i = 1; i < 12; i++) {
@@ -30,6 +31,7 @@ public class NumeroAnalyse implements Serializable {
         for (int i = 1; i < 50; i++) {
             this.numeroCombinaison.put(i, new NumeroCombinaison(i));
         }
+        this.numero = numero;
     }
 
     public Integer getNumero() {

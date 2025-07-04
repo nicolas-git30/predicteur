@@ -1,9 +1,21 @@
 package com.nicolasflandin.predicteur;
 
-import org.springframework.boot.SpringApplication;
+import org.springframework.boot.ExitCodeGenerator;
+import org.springframework.boot.WebApplicationType;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
 
+@SpringBootApplication
 public class ApplicationPredicteur {
     public static void main(String[] args) {
-        SpringApplication.run(ApplicationPredicteur.class, args);
+
+        final ConfigurableApplicationContext ctx = new SpringApplicationBuilder(ApplicationPredicteur.class)
+                .web(WebApplicationType.NONE)
+                .run(args);
+        final ExitCodeGenerator exitCodeGen = ctx.getBean(ExitCodeGenerator.class);
+        final int exitCode = exitCodeGen.getExitCode();
+        ctx.close();
+        System.exit(exitCode);
     }
 }

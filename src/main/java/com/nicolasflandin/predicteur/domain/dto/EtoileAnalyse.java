@@ -17,11 +17,13 @@ public class EtoileAnalyse implements Serializable {
     private BigDecimal moyenneSortiesTroisAns;
     private BigDecimal probabilite;
 
-    public EtoileAnalyse() {
+    public EtoileAnalyse() {}
+    public EtoileAnalyse(final Integer etoile ) {
         this.etoileCombinaison = new HashMap<>();
         for (int i = 1; i < 12; i++) {
             this.etoileCombinaison.put(i, new EtoileCombinaison(i));
         }
+        this.etoile = etoile;
     }
 
     public Integer getEtoile() {

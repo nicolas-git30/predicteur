@@ -5,5 +5,5 @@ import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 
 @AnnotationDomain
 public interface ILecteurFichierCsv<T> {
-    public T lectureFichier(String cheminFichier) throws ExceptionReadFile;
+    public T lectureFichier() throws ExceptionReadFile;
 }

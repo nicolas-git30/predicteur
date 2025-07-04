@@ -1,0 +1,11 @@
+batch-properties:
+  chunkSize: 500
+  nameJob: predictionJob
+
+logging:
+  level.root: INFO
+  level.org.springframework: INFO
+  level.com.nicolasflandin.predicteur: DEBUG
+
+
+
