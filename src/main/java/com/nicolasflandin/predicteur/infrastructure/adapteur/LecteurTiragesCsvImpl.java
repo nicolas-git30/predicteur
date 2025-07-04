@@ -3,14 +3,13 @@ package com.nicolasflandin.predicteur.infrastructure.adapteur;
 import com.nicolasflandin.predicteur.application.annotation.AnnotationInfrastructure;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.Reader;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
-
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
 
 @Repository
 @AnnotationInfrastructure

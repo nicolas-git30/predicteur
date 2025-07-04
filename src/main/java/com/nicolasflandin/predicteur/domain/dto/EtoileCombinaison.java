@@ -1,7 +1,6 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -11,7 +10,7 @@ public class EtoileCombinaison implements Serializable {
     private Integer numeroEtoile;
     private BigDecimal probabilite;
 
-    public EtoileCombinaison(){}
+    public EtoileCombinaison() {}
 
     public EtoileCombinaison(final Integer numeroEtoile) {
         this.numeroEtoile = numeroEtoile;

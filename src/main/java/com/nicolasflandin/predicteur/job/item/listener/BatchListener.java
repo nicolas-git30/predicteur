@@ -1,11 +1,10 @@
 package com.nicolasflandin.predicteur.job.item.listener;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
-import org.springframework.batch.core.JobExecutionListener;
-import org.springframework.stereotype.Component;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.springframework.batch.core.JobExecutionListener;
+import org.springframework.stereotype.Component;
 
 @AnnotationJob
 @Component

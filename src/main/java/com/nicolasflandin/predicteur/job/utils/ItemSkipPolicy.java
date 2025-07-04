@@ -13,4 +13,3 @@ public class ItemSkipPolicy implements SkipPolicy {
         return true;
     }
 }
-

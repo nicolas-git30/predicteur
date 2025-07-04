@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class CreationPerimeterUseCaseBridge {
 
     @Bean
-    public CreationPerimetreUseCase creationPerimetreUseCase(ICreationPerimetre creationPerimetreUseCase){
+    public CreationPerimetreUseCase creationPerimetreUseCase(ICreationPerimetre creationPerimetreUseCase) {
         return new CreationPerimetreUseCase(creationPerimetreUseCase);
     }
 }

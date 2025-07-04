@@ -1,7 +1,6 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -10,7 +9,6 @@ public class NumeroCombinaison implements Serializable {
 
     private Integer numero;
     private BigDecimal probabilite;
-
 
     public NumeroCombinaison() {}
 

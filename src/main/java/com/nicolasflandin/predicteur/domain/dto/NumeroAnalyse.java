@@ -1,7 +1,6 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -22,7 +21,8 @@ public class NumeroAnalyse implements Serializable {
     private BigDecimal probabilite;
 
     public NumeroAnalyse() {}
-    public NumeroAnalyse( final Integer numero ) {
+
+    public NumeroAnalyse(final Integer numero) {
         this.numeroCombinaison = new HashMap<>();
         this.etoileCombinaison = new HashMap<>();
         for (int i = 1; i < 12; i++) {

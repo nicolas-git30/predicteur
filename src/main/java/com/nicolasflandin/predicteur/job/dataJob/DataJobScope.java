@@ -2,13 +2,12 @@ package com.nicolasflandin.predicteur.job.dataJob;
 
 import com.nicolasflandin.predicteur.domain.dto.EtoileAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.NumeroAnalyse;
-import org.springframework.batch.core.configuration.annotation.JobScope;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.batch.core.configuration.annotation.JobScope;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 @Component
 @JobScope

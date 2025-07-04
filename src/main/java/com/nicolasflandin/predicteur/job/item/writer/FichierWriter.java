@@ -10,7 +10,5 @@ import org.springframework.stereotype.Component;
 @Component
 public class FichierWriter implements ItemWriter<TirageDto> {
     @Override
-    public void write(final Chunk<? extends TirageDto> chunk) throws Exception {
-
-    }
+    public void write(final Chunk<? extends TirageDto> chunk) throws Exception {}
 }

@@ -1,7 +1,6 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
-
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;

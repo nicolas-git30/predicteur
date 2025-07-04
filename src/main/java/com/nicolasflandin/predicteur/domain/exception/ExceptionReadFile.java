@@ -1,7 +1,6 @@
 package com.nicolasflandin.predicteur.domain.exception;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationInfrastructure;
-
 import java.io.IOException;
 
 @AnnotationInfrastructure
@@ -14,6 +13,5 @@ public class ExceptionReadFile extends IOException {
         super(message, cause);
     }
 
-    public ExceptionReadFile(final IOException e) {
-    }
+    public ExceptionReadFile(final IOException e) {}
 }
