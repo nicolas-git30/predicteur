@@ -23,10 +23,10 @@ public class ItemAnalyse implements Serializable {
     public ItemAnalyse(final Integer numero) {
         this.numeroCombinaison = new HashMap<>();
         this.etoileCombinaison = new HashMap<>();
-        for (int i = 1; i < 12; i++) {
+        for (int i = 1; i < 13; i++) {
             this.etoileCombinaison.put(i, new EtoileCombinaison(i));
         }
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             this.numeroCombinaison.put(i, new NumeroCombinaison(i));
         }
         this.numero = numero;

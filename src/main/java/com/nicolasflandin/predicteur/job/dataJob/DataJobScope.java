@@ -21,10 +21,10 @@ public class DataJobScope implements Serializable {
         NumerosAnalyse = new HashMap<>();
         EtoilesAnalyse = new HashMap<>();
 
-        for (int i = 1; i < 12; i++) {
+        for (int i = 1; i < 13; i++) {
             this.EtoilesAnalyse.put(i, new EtoileAnalyse(i));
         }
-        for (int i = 1; i < 50; i++) {
+        for (int i = 1; i < 51; i++) {
             this.NumerosAnalyse.put(i, new NumeroAnalyse(i));
         }
     }
