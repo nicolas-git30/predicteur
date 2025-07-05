@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 public class EtoileCombinaison implements Serializable {
 
     private Integer numeroEtoile;
+    private Integer nombreCombinaison = 0;
     private BigDecimal probabilite;
 
     public EtoileCombinaison() {}
@@ -22,6 +23,14 @@ public class EtoileCombinaison implements Serializable {
 
     public void setNumeroEtoile(final Integer numeroEtoile) {
         this.numeroEtoile = numeroEtoile;
+    }
+
+    public Integer getNombreCombinaison() {
+        return nombreCombinaison;
+    }
+
+    public void setNombreCombinaison(final Integer nombreCombinaison) {
+        this.nombreCombinaison = nombreCombinaison;
     }
 
     public BigDecimal getProbabilite() {

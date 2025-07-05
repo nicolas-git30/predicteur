@@ -10,6 +10,6 @@ public class ItemSkipPolicy implements SkipPolicy {
 
     @Override
     public boolean shouldSkip(final @Nonnull Throwable t, final long skipCount) throws SkipLimitExceededException {
-        return true;
+        return false;
     }
 }

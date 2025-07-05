@@ -5,6 +5,7 @@ import java.io.IOException;
 
 @AnnotationInfrastructure
 public class ExceptionReadFile extends IOException {
+
     public ExceptionReadFile(String message) {
         super(message);
     }

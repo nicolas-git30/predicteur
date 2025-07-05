@@ -5,6 +5,6 @@ import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import java.util.List;
 
 @AnnotationDomain
-public interface ICreationPerimetre {
+public interface ICreateurPerimetre {
     public List<TirageDto> CreationListTirage() throws Exception;
 }

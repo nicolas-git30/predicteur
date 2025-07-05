@@ -2,7 +2,7 @@ package com.nicolasflandin.predicteur.job.item.processor;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
-import com.nicolasflandin.predicteur.job.dataJob.DataJobScope;
+import com.nicolasflandin.predicteur.domain.port.useCase.TraitementTirageUseCase;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
@@ -10,14 +10,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class TirageProcessor implements ItemProcessor<TirageDto, TirageDto> {
 
-    private DataJobScope dataJobScope;
+    private final TraitementTirageUseCase traitementTirageUseCase;
 
-    public TirageProcessor(final DataJobScope dataJobScope) {
-        this.dataJobScope = dataJobScope;
+    public TirageProcessor(final TraitementTirageUseCase traitementTirageUseCase) {
+        this.traitementTirageUseCase = traitementTirageUseCase;
     }
 
     @Override
     public TirageDto process(final TirageDto item) throws Exception {
-        return null;
+        traitementTirageUseCase.traitementTirage(item);
+        return item;
     }
 }

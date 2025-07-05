@@ -8,13 +8,12 @@ import java.util.Map;
 
 public class EtoileAnalyse implements Serializable {
 
-    private Integer etoile;
-    private Integer nombreSorties;
-    private Integer nombreJoursDelta;
-    private LocalDate lastDateSortie;
+    private Integer etoile = 0;
+    private Integer nombreSorties = 0;
+    private Integer nombreJoursDelta = 0;
+    private LocalDate ancienneDateSortie;
+    private LocalDate nouvelleDateSortie;
     private Map<Integer, EtoileCombinaison> etoileCombinaison;
-    private Integer nombreSortiesTroisAns;
-    private BigDecimal moyenneSortiesTroisAns;
     private BigDecimal probabilite;
 
     public EtoileAnalyse() {}
@@ -51,12 +50,20 @@ public class EtoileAnalyse implements Serializable {
         this.nombreJoursDelta = nombreJoursDelta;
     }
 
-    public LocalDate getLastDateSortie() {
-        return lastDateSortie;
+    public LocalDate getAncienneDateSortie() {
+        return ancienneDateSortie;
     }
 
-    public void setLastDateSortie(final LocalDate lastDateSortie) {
-        this.lastDateSortie = lastDateSortie;
+    public void setAncienneDateSortie(final LocalDate ancienneDateSortie) {
+        this.ancienneDateSortie = ancienneDateSortie;
+    }
+
+    public LocalDate getNouvelleDateSortie() {
+        return nouvelleDateSortie;
+    }
+
+    public void setNouvelleDateSortie(final LocalDate nouvelleDateSortie) {
+        this.nouvelleDateSortie = nouvelleDateSortie;
     }
 
     public Map<Integer, EtoileCombinaison> getEtoileCombinaison() {
@@ -65,22 +72,6 @@ public class EtoileAnalyse implements Serializable {
 
     public void setEtoileCombinaison(final Map<Integer, EtoileCombinaison> etoileCombinaison) {
         this.etoileCombinaison = etoileCombinaison;
-    }
-
-    public Integer getNombreSortiesTroisAns() {
-        return nombreSortiesTroisAns;
-    }
-
-    public void setNombreSortiesTroisAns(final Integer nombreSortiesTroisAns) {
-        this.nombreSortiesTroisAns = nombreSortiesTroisAns;
-    }
-
-    public BigDecimal getMoyenneSortiesTroisAns() {
-        return moyenneSortiesTroisAns;
-    }
-
-    public void setMoyenneSortiesTroisAns(final BigDecimal moyenneSortiesTroisAns) {
-        this.moyenneSortiesTroisAns = moyenneSortiesTroisAns;
     }
 
     public BigDecimal getProbabilite() {

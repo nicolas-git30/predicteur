@@ -8,6 +8,7 @@ import java.math.BigDecimal;
 public class NumeroCombinaison implements Serializable {
 
     private Integer numero;
+    private Integer nombreCombinaison = 0;
     private BigDecimal probabilite;
 
     public NumeroCombinaison() {}
@@ -22,6 +23,14 @@ public class NumeroCombinaison implements Serializable {
 
     public void setNumero(final Integer numero) {
         this.numero = numero;
+    }
+
+    public Integer getNombreCombinaison() {
+        return nombreCombinaison;
+    }
+
+    public void setNombreCombinaison(final Integer nombreCombinaison) {
+        this.nombreCombinaison = nombreCombinaison;
     }
 
     public BigDecimal getProbabilite() {

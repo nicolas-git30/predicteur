@@ -1,14 +1,16 @@
 package com.nicolasflandin.predicteur.domain.port.useCase;
 
+import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
-import com.nicolasflandin.predicteur.domain.port.out.ICreationPerimetre;
+import com.nicolasflandin.predicteur.domain.port.out.ICreateurPerimetre;
 import java.util.List;
 
+@AnnotationDomain
 public class CreationPerimetreUseCase {
 
-    private final ICreationPerimetre creationPerimetre;
+    private final ICreateurPerimetre creationPerimetre;
 
-    public CreationPerimetreUseCase(final ICreationPerimetre creationPerimetre) {
+    public CreationPerimetreUseCase(final ICreateurPerimetre creationPerimetre) {
         this.creationPerimetre = creationPerimetre;
     }
 
