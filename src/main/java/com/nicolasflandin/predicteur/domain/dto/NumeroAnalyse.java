@@ -1,23 +1,15 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
 @AnnotationDomain
-public class NumeroAnalyse implements Serializable {
+public class NumeroAnalyse extends ItemAnalyse {
 
     private Integer numero;
-    private Integer nombreSorties = 0;
-    private Integer nombreJoursDelta = 0;
-    private LocalDate ancienneDateSortie;
-    private LocalDate nouvelleDateSortie;
-    private Map<Integer, NumeroCombinaison> numeroCombinaison;
-    private Map<Integer, EtoileCombinaison> etoileCombinaison;
-    private BigDecimal probabilite;
+    private Map<Integer, ItemCombinaison> numeroCombinaison;
+    private Map<Integer, ItemCombinaison> etoileCombinaison;
 
     public NumeroAnalyse() {}
 
@@ -41,59 +33,19 @@ public class NumeroAnalyse implements Serializable {
         this.numero = numero;
     }
 
-    public Integer getNombreSorties() {
-        return nombreSorties;
-    }
-
-    public void setNombreSorties(final Integer nombreSorties) {
-        this.nombreSorties = nombreSorties;
-    }
-
-    public Integer getNombreJoursDelta() {
-        return nombreJoursDelta;
-    }
-
-    public void setNombreJoursDelta(final Integer nombreJoursDelta) {
-        this.nombreJoursDelta = nombreJoursDelta;
-    }
-
-    public LocalDate getAncienneDateSortie() {
-        return ancienneDateSortie;
-    }
-
-    public void setAncienneDateSortie(final LocalDate ancienneDateSortie) {
-        this.ancienneDateSortie = ancienneDateSortie;
-    }
-
-    public LocalDate getNouvelleDateSortie() {
-        return nouvelleDateSortie;
-    }
-
-    public void setNouvelleDateSortie(final LocalDate nouvelleDateSortie) {
-        this.nouvelleDateSortie = nouvelleDateSortie;
-    }
-
-    public Map<Integer, NumeroCombinaison> getNumeroCombinaison() {
+    public Map<Integer, ItemCombinaison> getNumeroCombinaison() {
         return numeroCombinaison;
     }
 
-    public void setNumeroCombinaison(final Map<Integer, NumeroCombinaison> numeroCombinaison) {
+    public void setNumeroCombinaison(final Map<Integer, ItemCombinaison> numeroCombinaison) {
         this.numeroCombinaison = numeroCombinaison;
     }
 
-    public Map<Integer, EtoileCombinaison> getEtoileCombinaison() {
+    public Map<Integer, ItemCombinaison> getEtoileCombinaison() {
         return etoileCombinaison;
     }
 
-    public void setEtoileCombinaison(final Map<Integer, EtoileCombinaison> etoileCombinaison) {
+    public void setEtoileCombinaison(final Map<Integer, ItemCombinaison> etoileCombinaison) {
         this.etoileCombinaison = etoileCombinaison;
-    }
-
-    public BigDecimal getProbabilite() {
-        return probabilite;
-    }
-
-    public void setProbabilite(final BigDecimal probabilite) {
-        this.probabilite = probabilite;
     }
 }
