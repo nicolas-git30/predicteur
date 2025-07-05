@@ -3,14 +3,31 @@ package com.nicolasflandin.predicteur.domain.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ItemAnalyse implements Serializable {
 
+    private Integer numero;
     private Integer nombreSorties = 0;
     private Integer nombreJoursDelta = 0;
     private LocalDate ancienneDateSortie;
     private LocalDate nouvelleDateSortie;
     private BigDecimal probabilite;
+    private Map<Integer, ItemCombinaison> etoileCombinaison;
+    private Map<Integer, ItemCombinaison> numeroCombinaison;
+
+    public ItemAnalyse(final Integer numero) {
+        this.numeroCombinaison = new HashMap<>();
+        this.etoileCombinaison = new HashMap<>();
+        for (int i = 1; i < 12; i++) {
+            this.etoileCombinaison.put(i, new EtoileCombinaison(i));
+        }
+        for (int i = 1; i < 50; i++) {
+            this.numeroCombinaison.put(i, new NumeroCombinaison(i));
+        }
+        this.numero = numero;
+    }
 
     public Integer getNombreSorties() {
         return nombreSorties;
@@ -50,5 +67,29 @@ public class ItemAnalyse implements Serializable {
 
     public void setProbabilite(final BigDecimal probabilite) {
         this.probabilite = probabilite;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(final Integer numero) {
+        this.numero = numero;
+    }
+
+    public Map<Integer, ItemCombinaison> getEtoileCombinaison() {
+        return etoileCombinaison;
+    }
+
+    public void setEtoileCombinaison(final Map<Integer, ItemCombinaison> etoileCombinaison) {
+        this.etoileCombinaison = etoileCombinaison;
+    }
+
+    public Map<Integer, ItemCombinaison> getNumeroCombinaison() {
+        return numeroCombinaison;
+    }
+
+    public void setNumeroCombinaison(final Map<Integer, ItemCombinaison> numeroCombinaison) {
+        this.numeroCombinaison = numeroCombinaison;
     }
 }

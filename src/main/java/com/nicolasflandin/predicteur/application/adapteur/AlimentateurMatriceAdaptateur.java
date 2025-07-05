@@ -4,10 +4,10 @@ import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
 import com.nicolasflandin.predicteur.domain.dto.EtoileAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.NumeroAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
+import com.nicolasflandin.predicteur.domain.enums.EnumTypeItem;
 import com.nicolasflandin.predicteur.domain.port.out.IAlimentateurMatrice;
 import com.nicolasflandin.predicteur.domain.service.AlimentateurMatriceAbstract;
 import com.nicolasflandin.predicteur.job.dataJob.DataJobScope;
-import java.util.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
@@ -29,49 +29,35 @@ public class AlimentateurMatriceAdaptateur extends AlimentateurMatriceAbstract i
                     && this.dataJobScope.EtoilesAnalyse != null
                     && tirageDto != null) {
 
-                // parcour sur les numéros du tirage
                 tirageDto.getNumeroTirage().forEach(item -> {
                     NumeroAnalyse numeroAnalyse = this.dataJobScope.NumerosAnalyse.get(item);
                     this.updateItemAnalyse(numeroAnalyse, tirageDto.getDateTirage());
-
-                    tirageDto.getNumeroTirage().forEach(itemCombi -> {
-                        if (!itemCombi.equals(item)) {
-                            numeroAnalyse
-                                    .getNumeroCombinaison()
-                                    .put(
-                                            itemCombi,
-                                            this.updateItemCombinaison(
-                                                    itemCombi, numeroAnalyse.getNumeroCombinaison()));
-                        }
-                    });
-                    tirageDto.getEtoileTirage().forEach(itemCombi -> {
-                        numeroAnalyse
-                                .getEtoileCombinaison()
-                                .put(
-                                        itemCombi,
-                                        this.updateItemCombinaison(itemCombi, numeroAnalyse.getEtoileCombinaison()));
-                    });
+                    this.updateItemCombinaison(
+                            tirageDto.getNumeroTirage(),
+                            item,
+                            numeroAnalyse,
+                            EnumTypeItem.NUMERO.getValue(),
+                            EnumTypeItem.NUMERO.getValue());
+                    this.updateItemCombinaison(
+                            tirageDto.getEtoileTirage(),
+                            item,
+                            numeroAnalyse,
+                            EnumTypeItem.ETOILE.getValue(),
+                            EnumTypeItem.NUMERO.getValue());
                     this.dataJobScope.NumerosAnalyse.put(item, numeroAnalyse);
                 });
 
-                // parcour sur les étoiles du tirage
                 tirageDto.getEtoileTirage().forEach(item -> {
                     EtoileAnalyse etoileAnalyse = this.dataJobScope.EtoilesAnalyse.get(item);
                     this.updateItemAnalyse(etoileAnalyse, tirageDto.getDateTirage());
-
-                    tirageDto.getEtoileTirage().forEach(itemCombi -> {
-                        if (!itemCombi.equals(item)) {
-                            etoileAnalyse
-                                    .getEtoileCombinaison()
-                                    .put(
-                                            itemCombi,
-                                            this.updateItemCombinaison(
-                                                    itemCombi, etoileAnalyse.getEtoileCombinaison()));
-                        }
-                    });
+                    this.updateItemCombinaison(
+                            tirageDto.getEtoileTirage(),
+                            item,
+                            etoileAnalyse,
+                            EnumTypeItem.ETOILE.getValue(),
+                            EnumTypeItem.ETOILE.getValue());
                     this.dataJobScope.EtoilesAnalyse.put(item, etoileAnalyse);
                 });
-                Logger.getLogger("toto").info("toto");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);
