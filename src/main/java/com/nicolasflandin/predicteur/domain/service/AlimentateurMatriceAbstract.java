@@ -7,6 +7,7 @@ import com.nicolasflandin.predicteur.domain.enums.EnumTypeItem;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionUpdateItemAnalyse;
 import com.nicolasflandin.predicteur.domain.port.out.IAlimentateurMatrice;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +22,14 @@ public abstract class AlimentateurMatriceAbstract implements IAlimentateurMatric
         itemAnalyse.setNouvelleDateSortie(dateSortie);
         if (itemAnalyse.getAncienneDateSortie() == null) {
             itemAnalyse.setAncienneDateSortie(dateSortie);
+            itemAnalyse.setNombreJoursDelta(0);
+        } else {
+            Long nombreJour = ChronoUnit.DAYS.between(dateSortie, itemAnalyse.getAncienneDateSortie());
+            Integer nombreDelta = (nombreJour.intValue() + itemAnalyse.getNombreJoursDelta())
+                    / (itemAnalyse.getNombreJoursDelta().equals(0) ? 1 : 2);
+            itemAnalyse.setNombreJoursDelta(nombreDelta);
+            itemAnalyse.setAncienneDateSortie(dateSortie);
+            System.out.println("nombreDelta = " + nombreDelta);
         }
     }
 

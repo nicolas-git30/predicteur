@@ -1,6 +1,6 @@
 package com.nicolasflandin.predicteur.application.adapteur;
 
-import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
+import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
 import com.nicolasflandin.predicteur.domain.dto.EtoileAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.NumeroAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
@@ -11,7 +11,7 @@ import com.nicolasflandin.predicteur.job.dataJob.DataJobScope;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
-@AnnotationDomain
+@AnnotationApplication
 @Service
 public class AlimentateurMatriceAdaptateur extends AlimentateurMatriceAbstract implements IAlimentateurMatrice {
 

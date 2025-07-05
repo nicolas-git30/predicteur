@@ -10,7 +10,7 @@ public class ItemAnalyse implements Serializable {
 
     private Integer numero;
     private Integer nombreSorties = 0;
-    private Integer nombreJoursDelta = 0;
+    private Integer nombreJoursDelta;
     private LocalDate ancienneDateSortie;
     private LocalDate nouvelleDateSortie;
     private BigDecimal probabilite;
