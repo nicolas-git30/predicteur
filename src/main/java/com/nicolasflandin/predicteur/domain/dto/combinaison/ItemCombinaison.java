@@ -1,4 +1,4 @@
-package com.nicolasflandin.predicteur.domain.dto;
+package com.nicolasflandin.predicteur.domain.dto.combinaison;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

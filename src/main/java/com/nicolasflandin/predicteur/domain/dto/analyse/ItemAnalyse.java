@@ -1,5 +1,8 @@
-package com.nicolasflandin.predicteur.domain.dto;
+package com.nicolasflandin.predicteur.domain.dto.analyse;
 
+import com.nicolasflandin.predicteur.domain.dto.combinaison.EtoileCombinaison;
+import com.nicolasflandin.predicteur.domain.dto.combinaison.ItemCombinaison;
+import com.nicolasflandin.predicteur.domain.dto.combinaison.NumeroCombinaison;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;

@@ -1,9 +1,9 @@
 package com.nicolasflandin.predicteur.application.adapteur;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
-import com.nicolasflandin.predicteur.domain.dto.EtoileAnalyse;
-import com.nicolasflandin.predicteur.domain.dto.NumeroAnalyse;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
+import com.nicolasflandin.predicteur.domain.dto.analyse.EtoileAnalyse;
+import com.nicolasflandin.predicteur.domain.dto.analyse.NumeroAnalyse;
 import com.nicolasflandin.predicteur.domain.enums.EnumTypeItem;
 import com.nicolasflandin.predicteur.domain.port.out.IAlimentateurMatrice;
 import com.nicolasflandin.predicteur.domain.service.AlimentateurMatriceAbstract;

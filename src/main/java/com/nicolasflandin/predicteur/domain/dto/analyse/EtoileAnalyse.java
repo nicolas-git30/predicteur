@@ -1,4 +1,4 @@
-package com.nicolasflandin.predicteur.domain.dto;
+package com.nicolasflandin.predicteur.domain.dto.analyse;
 
 public class EtoileAnalyse extends ItemAnalyse {
 

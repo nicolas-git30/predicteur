@@ -1,4 +1,4 @@
-package com.nicolasflandin.predicteur.domain.dto;
+package com.nicolasflandin.predicteur.domain.dto.analyse;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
 

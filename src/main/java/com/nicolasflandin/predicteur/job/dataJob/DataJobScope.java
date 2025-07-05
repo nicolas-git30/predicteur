@@ -1,7 +1,7 @@
 package com.nicolasflandin.predicteur.job.dataJob;
 
-import com.nicolasflandin.predicteur.domain.dto.EtoileAnalyse;
-import com.nicolasflandin.predicteur.domain.dto.NumeroAnalyse;
+import com.nicolasflandin.predicteur.domain.dto.analyse.EtoileAnalyse;
+import com.nicolasflandin.predicteur.domain.dto.analyse.NumeroAnalyse;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;

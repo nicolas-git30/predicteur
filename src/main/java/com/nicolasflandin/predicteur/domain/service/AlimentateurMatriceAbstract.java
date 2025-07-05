@@ -1,8 +1,8 @@
 package com.nicolasflandin.predicteur.domain.service;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
-import com.nicolasflandin.predicteur.domain.dto.ItemAnalyse;
-import com.nicolasflandin.predicteur.domain.dto.ItemCombinaison;
+import com.nicolasflandin.predicteur.domain.dto.analyse.ItemAnalyse;
+import com.nicolasflandin.predicteur.domain.dto.combinaison.ItemCombinaison;
 import com.nicolasflandin.predicteur.domain.enums.EnumTypeItem;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionUpdateItemAnalyse;
 import com.nicolasflandin.predicteur.domain.port.out.IAlimentateurMatrice;
