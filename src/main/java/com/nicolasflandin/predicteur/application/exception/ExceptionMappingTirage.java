@@ -1,5 +1,8 @@
 package com.nicolasflandin.predicteur.application.exception;
 
+import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
+
+@AnnotationApplication
 public class ExceptionMappingTirage extends RuntimeException {
     public ExceptionMappingTirage(String message) {
         super(message);

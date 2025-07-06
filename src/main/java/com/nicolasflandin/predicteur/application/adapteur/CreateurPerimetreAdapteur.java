@@ -7,16 +7,17 @@ import com.nicolasflandin.predicteur.domain.exception.ExceptionReadFile;
 import com.nicolasflandin.predicteur.domain.port.out.ICreateurPerimetre;
 import com.nicolasflandin.predicteur.domain.port.out.ILecteurFichierCsv;
 import com.nicolasflandin.predicteur.domain.provider.IDateFormaterProvider;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.stereotype.Service;
 
-@AnnotationApplication
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
+@AnnotationApplication
 public class CreateurPerimetreAdapteur implements ICreateurPerimetre {
 
     private final ILecteurFichierCsv<CSVParser> lecteurCsv;

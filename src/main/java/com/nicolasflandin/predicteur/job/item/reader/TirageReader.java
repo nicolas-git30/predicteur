@@ -3,13 +3,14 @@ package com.nicolasflandin.predicteur.job.item.reader;
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
 import com.nicolasflandin.predicteur.domain.dto.TirageDto;
 import com.nicolasflandin.predicteur.domain.port.useCase.CreationPerimetreUseCase;
-import java.util.List;
 import org.springframework.batch.core.annotation.BeforeStep;
 import org.springframework.batch.item.ItemReader;
 import org.springframework.stereotype.Component;
 
-@AnnotationJob
+import java.util.List;
+
 @Component
+@AnnotationJob
 public class TirageReader implements ItemReader<TirageDto> {
 
     private final CreationPerimetreUseCase creationPerimetreUseCase;

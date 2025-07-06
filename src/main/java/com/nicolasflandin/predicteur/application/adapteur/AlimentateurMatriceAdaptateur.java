@@ -11,8 +11,8 @@ import com.nicolasflandin.predicteur.job.dataJob.DataJobScope;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Service;
 
-@AnnotationApplication
 @Service
+@AnnotationApplication
 public class AlimentateurMatriceAdaptateur extends AlimentateurMatriceAbstract implements IAlimentateurMatrice {
 
     private final DataJobScope dataJobScope;
