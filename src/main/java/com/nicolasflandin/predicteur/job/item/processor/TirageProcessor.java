@@ -6,8 +6,9 @@ import com.nicolasflandin.predicteur.domain.port.useCase.TraitementTirageUseCase
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Component;
 
-@AnnotationJob
+
 @Component
+@AnnotationJob
 public class TirageProcessor implements ItemProcessor<TirageDto, TirageDto> {
 
     private final TraitementTirageUseCase traitementTirageUseCase;

@@ -1,13 +1,14 @@
 package com.nicolasflandin.predicteur.job.item.listener;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.stereotype.Component;
 
-@AnnotationJob
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 @Component
+@AnnotationJob
 public class BatchListener implements JobExecutionListener {
 
     public BatchListener() {

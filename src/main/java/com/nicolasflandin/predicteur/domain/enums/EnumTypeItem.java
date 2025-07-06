@@ -1,5 +1,8 @@
 package com.nicolasflandin.predicteur.domain.enums;
 
+import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
+
+@AnnotationDomain
 public enum EnumTypeItem {
     ETOILE("Etoile"),
     NUMERO("NUMERO");

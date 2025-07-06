@@ -1,14 +1,17 @@
 package com.nicolasflandin.predicteur.job.item.writer;
 
 import com.nicolasflandin.predicteur.application.annotation.AnnotationJob;
-import com.nicolasflandin.predicteur.domain.dto.TirageDto;
+import com.nicolasflandin.predicteur.domain.dto.analyse.NumeroAnalyse;
 import org.springframework.batch.item.Chunk;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Component;
 
 @Component
 @AnnotationJob
-public class FichierWriter implements ItemWriter<TirageDto> {
+public class NumeroAnalyseWriter implements ItemWriter<NumeroAnalyse> {
+
     @Override
-    public void write(final Chunk<? extends TirageDto> chunk) throws Exception {}
+    public void write(final Chunk<? extends NumeroAnalyse> chunk) throws Exception {
+
+    }
 }

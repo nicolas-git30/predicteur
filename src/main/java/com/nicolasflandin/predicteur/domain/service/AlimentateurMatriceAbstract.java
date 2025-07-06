@@ -6,12 +6,11 @@ import com.nicolasflandin.predicteur.domain.dto.combinaison.ItemCombinaison;
 import com.nicolasflandin.predicteur.domain.enums.EnumTypeItem;
 import com.nicolasflandin.predicteur.domain.exception.ExceptionUpdateItemAnalyse;
 import com.nicolasflandin.predicteur.domain.port.out.IAlimentateurMatrice;
-import org.jetbrains.annotations.NotNull;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
 
 @AnnotationDomain
 public abstract class AlimentateurMatriceAbstract implements IAlimentateurMatrice {

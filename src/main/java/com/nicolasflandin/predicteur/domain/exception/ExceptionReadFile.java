@@ -1,9 +1,10 @@
 package com.nicolasflandin.predicteur.domain.exception;
 
-import com.nicolasflandin.predicteur.application.annotation.AnnotationInfrastructure;
+import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
+
 import java.io.IOException;
 
-@AnnotationInfrastructure
+@AnnotationDomain
 public class ExceptionReadFile extends IOException {
 
     public ExceptionReadFile(String message) {

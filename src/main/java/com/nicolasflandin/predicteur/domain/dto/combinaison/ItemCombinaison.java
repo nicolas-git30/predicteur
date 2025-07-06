@@ -1,8 +1,11 @@
 package com.nicolasflandin.predicteur.domain.dto.combinaison;
 
+import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+@AnnotationDomain
 public class ItemCombinaison implements Serializable {
     private Integer numero;
     private Integer nombreCombinaison = 0;

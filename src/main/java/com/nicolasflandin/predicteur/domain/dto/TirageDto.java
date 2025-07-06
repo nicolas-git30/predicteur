@@ -1,12 +1,13 @@
 package com.nicolasflandin.predicteur.domain.dto;
 
-import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
+import com.nicolasflandin.predicteur.application.annotation.AnnotationDomain;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@AnnotationApplication
+@AnnotationDomain
 public class TirageDto implements Serializable {
 
     private LocalDate dateTirage;

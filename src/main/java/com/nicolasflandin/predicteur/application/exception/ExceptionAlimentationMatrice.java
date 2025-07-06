@@ -1,5 +1,8 @@
 package com.nicolasflandin.predicteur.application.exception;
 
+import com.nicolasflandin.predicteur.application.annotation.AnnotationApplication;
+
+@AnnotationApplication
 public class ExceptionAlimentationMatrice extends RuntimeException {
     public ExceptionAlimentationMatrice(String message) {
         super(message);
