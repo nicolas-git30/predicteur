@@ -18,6 +18,7 @@ public class NumeroAnalyseReader implements ItemReader<NumeroAnalyse> {
     @Override
     public NumeroAnalyse read() throws Exception {
         if(!this.dataJobScope.NumerosAnalyse.isEmpty() && this.indexNumero < this.dataJobScope.NumerosAnalyse.size()) {
+            System.out.println("NumeroAnalyseReader : ");
             return this.dataJobScope.NumerosAnalyse.get(this.indexNumero++);
         }
         return null;
